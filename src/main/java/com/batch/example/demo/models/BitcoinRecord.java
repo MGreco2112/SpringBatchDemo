@@ -1,67 +1,41 @@
 package com.batch.example.demo.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 
-@Entity
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+
 public class BitcoinRecord {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    private String unixTimestamp;
-    private String dateTime;
+    private String unix_timestamp;
+    private String date_time;
     private String open;
     private String high;
     private String low;
     private String close;
-    private String volumeBTC;
-    private String volumeCurrency;
-    private String weightedPrice;
-    private String price;
+    private String volume_btc;
+    private String volume_currency;
+    private String weighted_price;
 
-    public BitcoinRecord(Long id, String unixTimestamp, String dateTime, String open, String high, String low, String close, String volumeBTC, String volumeCurrency, String weightedPrice, String price) {
-        this.id = id;
-        this.unixTimestamp = unixTimestamp;
-        this.dateTime = dateTime;
-        this.open = open;
-        this.high = high;
-        this.low = low;
-        this.close = close;
-        this.volumeBTC = volumeBTC;
-        this.volumeCurrency = volumeCurrency;
-        this.weightedPrice = weightedPrice;
-        this.price = price;
+    public String getUnix_timestamp() {
+        return unix_timestamp;
     }
 
-    private BitcoinRecord() {
-
+    public void setUnix_timestamp(String unix_timestamp) {
+        this.unix_timestamp = unix_timestamp;
     }
 
-    public Long getId() {
-        return id;
+    public String getDate_time() {
+        return date_time;
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getUnixTimestamp() {
-        return unixTimestamp;
-    }
-
-    public void setUnixTimestamp(String unixTimestamp) {
-        this.unixTimestamp = unixTimestamp;
-    }
-
-    public String getDateTime() {
-        return dateTime;
-    }
-
-    public void setDateTime(String dateTime) {
-        this.dateTime = dateTime;
+    public void setDate_time(String datetime) {
+        this.date_time = datetime;
     }
 
     public String getOpen() {
@@ -96,35 +70,27 @@ public class BitcoinRecord {
         this.close = close;
     }
 
-    public String getVolumeBTC() {
-        return volumeBTC;
+    public String getVolume_btc() {
+        return volume_btc;
     }
 
-    public void setVolumeBTC(String volumeBTC) {
-        this.volumeBTC = volumeBTC;
+    public void setVolume_btc(String volume_btc) {
+        this.volume_btc = volume_btc;
     }
 
-    public String getVolumeCurrency() {
-        return volumeCurrency;
+    public String getVolume_currency() {
+        return volume_currency;
     }
 
-    public void setVolumeCurrency(String volumeCurrency) {
-        this.volumeCurrency = volumeCurrency;
+    public void setVolume_currency(String volume_currency) {
+        this.volume_currency = volume_currency;
     }
 
-    public String getWeightedPrice() {
-        return weightedPrice;
+    public String getWeighted_price() {
+        return weighted_price;
     }
 
-    public void setWeightedPrice(String weightedPrice) {
-        this.weightedPrice = weightedPrice;
-    }
-
-    public String getPrice() {
-        return price;
-    }
-
-    public void setPrice(String price) {
-        this.price = price;
+    public void setWeighted_price(String weighted_price) {
+        this.weighted_price = weighted_price;
     }
 }
